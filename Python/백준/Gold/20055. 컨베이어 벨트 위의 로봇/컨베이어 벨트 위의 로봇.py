@@ -25,6 +25,8 @@ while True:
                     robot[i] = 0
                     robot[i+1] = 1
                     belt[i+1] -=1
+                    if belt[i+1] <1:
+                        k -=1
     #
     if robot[n-1] == 1:
         robot[n-1] = 0
@@ -32,10 +34,10 @@ while True:
     if belt[0] >0:
         belt[0] -= 1
         robot[0] =1
+        if belt[0] <1:
+            k -=1
     #
-    tmp = belt.count(0)
-    #
-    if tmp>=k:
+    if k<1:
         print(f"{cnt}")
         sys.exit(0)
     else:
